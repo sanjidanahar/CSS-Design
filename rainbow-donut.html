@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       $circle-qty:72;
+body{
+        background-color:rgb(6, 6, 6);
+       }
+       .scene{
+        width: 600px;
+        height: 250px;
+        margin: 36em auto;
+        perspective: 600px;
+       }
+       .wrapper{
+        width: 100%;
+        height: 100%;
+        transform-style: preserve-3d;
+        transform: rotateY(0) translateZ(0);
+       }
+       .tunnel{
+        position: relative;
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+        transform-style: preserve-3d;
+        animation: spin 9s infinite linear;
+       }
+       .ring{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 2px;
+        border-style: dashed;
+        border-radius: 50%;
+        transform-origin: 50% 50%;
+        color: #8df435;
+        transform: translateY(-200px);
+        -webkit-filter: blur(1.0125px);
+
+        &::marker{
+            content: '';
+
+        }
+       }
+       @for $i from l through $circle-qty {
+        .ring:nth-child(#($i)){
+            color:hsl($hue: $i,  $saturation:100%, $lightness:50%);
+            transform:rotateX($i*50deg) translateY(-200px);
+        }
+       }
+       @keyframes spin{
+        to{
+            transform: rotateY(360deg);
+        }
+       }
+    </style>
+</head>
+<body>
+    <div class="scene">
+        <div class="wrapper">
+            <ul class="tunnel">
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+                <li class="ring"></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
