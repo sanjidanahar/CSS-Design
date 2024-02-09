@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Circle</title>
     <style>
+
         .circle{
             aspect-ratio: 1;
             background: #222;
@@ -48,8 +49,8 @@
         body{
             margin: 4ch;
         }
-
     </style>
+
 </head>
 <body>
     <div id="app" class="circle"></div>
@@ -63,5 +64,6 @@
             return [...Array(items).keys()].map((index) => `<i style="--_bg:${color};--_deg:${rad * index + offset}deg;--_del:${delay * index}ms;"></i>`,).join("");
         }
     </script>
+    
 </body>
 </html>
